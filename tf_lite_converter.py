@@ -14,7 +14,7 @@ converter = tf.lite.TFLiteConverter.from_saved_model(MODEL_PATH)
 #Model Quantization for fixed point
 converter.optimizations = [tf.lite.Optimize.DEFAULT]
 converter.representative_dataset = representative_data_gen
-converter.target_spec.supported_ops = [tf.lite.OpsSet.TFLITE_BUILTINS, tf.lite.OpsSet.SELECT_TF_OPS]
+converter.target_spec.supported_ops = [tf.lite.OpsSet.TFLITE_BUILTINS]
 converter._experimental_lower_tensor_list_ops = False
 tflite_quant_model = converter.convert()
 #Save the model

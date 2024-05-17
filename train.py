@@ -16,19 +16,26 @@ tst_set_y = keras.utils.to_categorical(tst_set_y)
 inputs = keras.Input(shape = (650,64))
 
 #Construct the net
-lstm_layer = layers.LSTM(
-    units = 128,
-    use_cudnn=False
+conv1d_layer = layers.Conv1D(
+    filters = 64, 
+    kernel_size = 3,
+    activation = "relu"
 )
-net = lstm_layer(inputs)
-net = layers.Dense(
-    units = 128,
+net = conv1d_layer(inputs)
+net = layers.MaxPool1D()(net)
+net = layers.Dropout(0.2)(net)
+net = layers.Conv1D(
+    filters = 32,
+    kernel_size = 3,
     activation = "relu"
 )(net)
+net = layers.MaxPool1D()(net)
+net = layers.Dropout(0.2)(net)
+net = layers.Flatten()(net)
 net = layers.Dense(
-    units = 128,
+    units = 16,
     activation = "relu"
-)(net)
+)(net) 
 outputs = layers.Dense(
     units = 3,
     activation = "softmax"
@@ -68,4 +75,4 @@ print("Test loss:", test_scores[0])
 print("Test accuracy:", test_scores[1])
 
 #Save the model
-model.export("har_model", "tf_saved_model")
+#model.export("har_model", "tf_saved_model")
