@@ -2,6 +2,8 @@ import numpy as np
 import keras 
 from keras import layers
 from keras import ops 
+import tensorflow as tf 
+import time
 
 #Load files
 trn_set_x = np.load('trn_set_x.npy')
@@ -50,8 +52,8 @@ model = keras.Model(
 model.summary()
 
 #Specify training configuration
-batch_size = 12 
-num_epochs = 500
+batch_size = 6 
+num_epochs = 20
 criterion = keras.losses.CategoricalCrossentropy()
 optimizer = keras.optimizers.Adam(learning_rate = 0.0001)
 model.compile(
@@ -70,9 +72,19 @@ history = model.fit(
 )
 
 #Test the model with x_test
-test_scores = model.evaluate(tst_set_x, tst_set_y,verbose = 2)
-print("Test loss:", test_scores[0])
-print("Test accuracy:", test_scores[1])
+times = []
+for i in range(32):
+    t_obs = tst_set_x[i,:,:]
+    t_obs = t_obs[np.newaxis,...]
+    y_obs = tst_set_y[i]
+    y_obs = y_obs[np.newaxis,...]
+    inicio = time.time_ns()
+    test_scores = model.evaluate(t_obs, y_obs,verbose = 2)
+    fin = time.time_ns()
+    times.append(fin-inicio)
+    print("Test loss:", test_scores[0])
+    print("Test accuracy:", test_scores[1])
 
+print(np.mean(times))
 #Save the model
 #model.export("har_model", "tf_saved_model")

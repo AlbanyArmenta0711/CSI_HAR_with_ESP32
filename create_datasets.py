@@ -1,6 +1,7 @@
 import numpy as np 
 import pandas as pd 
 import os 
+import matplotlib.pyplot as plt 
 
 # 0 - Fall, 1 - Run, 2 - Walk
 CLASSES = ["Fall", "Run", "Walk"]
@@ -93,8 +94,16 @@ for num_class in range(len(CLASSES)):
         csi_amps = csi_amps[0:650,:]
         tst_set_x.append(csi_amps)
         tst_set_y.append(num_class)
-tst_set_x = np.array(trn_set_x)
-tst_set_y = np.array(trn_set_y)
+tst_set_x = np.array(tst_set_x)
+tst_set_y = np.array(tst_set_y)
 #Save training data into files
 np.save("tst_set_x.npy", tst_set_x)
 np.save("tst_set_y.npy", tst_set_y)
+x_1 = np.arange(0,650)
+for idx in range(64):
+    y = tst_set_x[1,:,idx]
+    plt.plot(x_1,y, linewidth='0.5')
+
+
+plt.show()
+        
