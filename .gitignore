@@ -51,5 +51,4 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-ESP32_Program/ESP_HAR/.vscode/
 ESP32_Program/ESP_HAR/build/
