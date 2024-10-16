@@ -4,7 +4,7 @@
 #define EXTERNC
 #endif
 
-#include "../common/common.h"
+#include "../../common/common.h"
 
 /*
  * Function to make a prediction using the model allocated

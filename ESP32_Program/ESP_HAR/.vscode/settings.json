@@ -1,8 +1,36 @@
 {
-    "C_Cpp.errorSquiggles": "disabled",
-    "idf.adapterTargetName": "esp32s3",
-    "idf.openOcdConfigs": [
-        "interface/ftdi/esp32_devkitj_v1.cfg",
-        "target/esp32s3.cfg"
-    ]
+    "idf.flashType": "UART",
+    "idf.portWin": "COM10",
+    "files.associations": {
+        "task.h": "c",
+        "esp_event.h": "c",
+        "sys.h": "c",
+        "queue.h": "c",
+        "esp_log.h": "c",
+        "random": "cpp",
+        "processor_task.h": "c",
+        "cmath": "c",
+        "lowpass.h": "c",
+        "fir_filter.h": "c",
+        "ranges": "c",
+        "algorithm": "c",
+        "functional": "c",
+        "optional": "c",
+        "system_error": "c",
+        "type_traits": "c",
+        "xlocmon": "c",
+        "xtr1common": "c",
+        "xutility": "c",
+        "*.tcc": "c",
+        "charconv": "c",
+        "chrono": "c",
+        "format": "c",
+        "ratio": "c",
+        "array": "c",
+        "regex": "c",
+        "tuple": "c",
+        "utility": "c",
+        "queue": "c"
+    },
+    "idf.adapterTargetName": "esp32"
 }

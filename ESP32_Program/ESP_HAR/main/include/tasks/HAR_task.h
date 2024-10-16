@@ -23,16 +23,13 @@ typedef enum har_task_message_id {
     HAR_TASK_MSG_TASK_STOP
 } har_task_message_id_enum;
 
-typedef struct csi_data {
-    int8_t * csi; 
-    uint16_t csi_len; 
-} csi_data_t; 
-
+/*
 //Struct containing message information
 typedef struct har_task_message {
     har_task_message_id_enum msg_id; 
     csi_data_t data; 
 } har_task_message_t; 
+*/
 
 /*
  * Function to start the HAR task, which receives CSI raw measurements for Human Activity Recognition

@@ -2,7 +2,7 @@
  * Created on: 05/16/2024
  * by: Jesus A. Armenta-Garcia
  */
-
+#include <esp_attr.h>
 /*
  * Model as vector
  */

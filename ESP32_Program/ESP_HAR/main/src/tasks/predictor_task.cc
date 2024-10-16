@@ -5,11 +5,11 @@
 #include "tensorflow/lite/micro/micro_log.h"
 #include "tensorflow/lite/schema/schema_generated.h"
 #include "tensorflow/lite/micro/system_setup.h"
-
+#include <esp_attr.h>
 #include "esp_log.h"
 
-#include "predictor.h"
-#include "model.h"
+#include "../../include/tasks/predictor_task.h"
+#include "../../include/model/model.h"
 
 
 namespace {
@@ -18,8 +18,8 @@ namespace {
   tflite::MicroInterpreter* interpreter = nullptr;
   TfLiteTensor* input = nullptr;
   TfLiteTensor* output = nullptr;
-  constexpr int kTensorArenaSize = 262114;
-  uint8_t tensor_arena[kTensorArenaSize];
+  constexpr int kTensorArenaSize = 210950;
+  EXT_RAM_BSS_ATTR uint8_t tensor_arena[kTensorArenaSize];
   const int data_rows = 650;
   const int data_cols = 64;
   const int input_size = data_rows * data_cols;  
@@ -52,7 +52,8 @@ static int setup_model() {
     //Map the model into a usable data structure 
     model = tflite::GetModel(g_model); 
     if (model->version() != TFLITE_SCHEMA_VERSION) {
-        ESP_LOGW(TAG, "Model provided is schema version not equal to supported version");
+         MicroPrintf("Model provided is schema version %d not equal to supported "
+                "version %d.", model->version(), TFLITE_SCHEMA_VERSION);
         return -1; 
     } 
     static tflite::MicroMutableOpResolver<10> op_resolver;
@@ -71,11 +72,12 @@ static int setup_model() {
 
     //Allocate memory for the models' tensors
     TfLiteStatus allocate_status = interpreter->AllocateTensors(); 
+    int num_bytes_tensor = interpreter->arena_used_bytes();
     if (allocate_status != kTfLiteOk) {
         ESP_LOGW(TAG, "Error allocating model tensors");
         return -1; 
     } else {
-        ESP_LOGI(TAG, "Tensors allocated for model"); 
+        ESP_LOGI(TAG, "Tensors allocated for model, size in bytes: %d", num_bytes_tensor); 
     }
 
     input = interpreter->input(0); 
