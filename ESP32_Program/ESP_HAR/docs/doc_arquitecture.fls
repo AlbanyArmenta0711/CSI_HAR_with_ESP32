@@ -184,6 +184,13 @@ INPUT C:\Users\UABC\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmsy6.tfm
 OUTPUT doc_arquitecture.toc
 INPUT C:\Users\UABC\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmssbx10.tfm
 INPUT C:\Users\UABC\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti10.tfm
+INPUT .\images\casos_uso.png
+INPUT .\images\casos_uso.png
+INPUT .\images\casos_uso.png
+INPUT .\images\casos_uso.png
+INPUT .\images\casos_uso.png
+INPUT .\images\casos_uso.png
+INPUT .\images\casos_uso.png
 INPUT doc_arquitecture.aux
 INPUT .\doc_arquitecture.out
 INPUT .\doc_arquitecture.out

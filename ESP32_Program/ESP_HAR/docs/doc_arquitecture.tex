@@ -33,7 +33,7 @@
     \begin{bfseries}
         \Huge{Documento de Arquitectura de Software}\\
         \vspace{1.5cm}
-        \textbf{Herramienta de Recolección, Procesamiento y Clasificación a partir de Wi-Fi CSI}\\
+        \textbf{Sistema para la Recolección, Procesamiento y Clasificación a partir de Wi-Fi CSI}\\
         \vspace{1.5cm}
         \LARGE{Versión \myversion}\\
         \vspace{1.5cm}
@@ -74,7 +74,7 @@ Cabe destacar que lo que se presenta en este documento corresponde al segundo de
 El sistema se divide en cinco procesos (\emph{tasks}, de acuerdo a FreeRTOS), Main Task, Wi-Fi Task, Processor Task, CSI Task y Predictor Task. 
 \begin{itemize}
   \item \textbf{Main Task: }
-  \item \textbf{Wi-FI Task: }
+  \item \textbf{Wi-Fi Task: }
   \item \textbf{Processor Task: }
   \item \textbf{CSI Task: }
   \item \textbf{Predictor Task: }
@@ -85,9 +85,9 @@ Descripcion de ESP IDF y ESP32
 
 \chapter{Vista de Casos de Uso}
 
-\section{Actores}
+Los actores que intervienen en el sistema, en conjunto con la descripción de cada uno de ellos se presenta en el Cuadro \ref{tab:actores}. Por otra parte, las interacciones de cada uno de ellos con el sistema se ilustran en la Figura \ref{fig:casos_uso}
 \begin{table}[h!]
-    \caption{tabla}
+    \caption{Descripción de Actores en el Sistema}
     \begin{tabularx}{\textwidth}{|l | X |}
         \hline
         \textbf{Actor} & \textbf{Descripción} \\
@@ -100,7 +100,16 @@ Descripcion de ESP IDF y ESP32
     \label{tab:actores}
 \end{table}
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale = 0.57]{images/casos_uso.png}
+    \caption{Diagrama de Casos de Uso}
+    \label{fig:casos_uso}
+\end{figure}
+
 \chapter{Vista Lógica}
+Para describir el sistema desde una vista lógica se utiliza un \emph{Diagrama de Componentes} el cual se muestra en la Figura \ref{}. En este podemos observar que los proceso del sistema también pueden ser catalogados como componentes del mismo con funcionalidades específicas e interacciones marcadas entre sí. 
+
 
 \chapter{Vista de Procesos}
 

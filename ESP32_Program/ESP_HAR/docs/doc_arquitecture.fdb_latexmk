@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1729125562.18458 "c:/Users/UABC/Documents/GitHub/CSI_HAR_with_ESP32/ESP32_Program/ESP_HAR/docs/doc_arquitecture.tex" "doc_arquitecture.pdf" "doc_arquitecture" 1729125564.75276 0
+["pdflatex"] 1729185924.3945 "c:/Users/UABC/Documents/GitHub/CSI_HAR_with_ESP32/ESP32_Program/ESP_HAR/docs/doc_arquitecture.tex" "doc_arquitecture.pdf" "doc_arquitecture" 1729185927.1474 0
   "C:/Users/UABC/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1729117975 99737 075dcb6692507d0d508855a446ebad7e ""
   "C:/Users/UABC/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1717521365 24262649 b0312592eccded83a718edaa79d64224 ""
   "C:/Users/UABC/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx10.tfm" 1136765053 1328 c834bbb027764024c09d3d2bf908b5f0 ""
@@ -89,11 +89,12 @@
   "C:/Users/UABC/AppData/Local/Programs/MiKTeX/tex/latex/tools/tabularx.sty" 1700599895 7147 d45559f8a31b8c53ada0640516660003 ""
   "C:/Users/UABC/AppData/Local/Programs/MiKTeX/tex/latex/underscore/underscore.sty" 1158212402 10722 1e2a550b7f07af2b195b71b3fc7bf3ff ""
   "C:/Users/UABC/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
-  "c:/Users/UABC/Documents/GitHub/CSI_HAR_with_ESP32/ESP32_Program/ESP_HAR/docs/doc_arquitecture.tex" 1729125558 5335 e4e81bfa28ba32ff557afb85adde59e0 ""
-  "doc_arquitecture.aux" 1729125564 7100 e97fe466d8fc0422754f1400568b17be "pdflatex"
-  "doc_arquitecture.out" 1729125564 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "doc_arquitecture.tex" 1729125558 5335 e4e81bfa28ba32ff557afb85adde59e0 ""
-  "doc_arquitecture.toc" 1729125564 1175 ef2d28606b4ef428c257a97381238da4 "pdflatex"
+  "c:/Users/UABC/Documents/GitHub/CSI_HAR_with_ESP32/ESP32_Program/ESP_HAR/docs/doc_arquitecture.tex" 1729185923 6102 76875ac4081a9a07dca5d3a6f94792b4 ""
+  "doc_arquitecture.aux" 1729185926 7121 1b81d9eb89ba2c0906287ff5dcf44b0a "pdflatex"
+  "doc_arquitecture.out" 1729185926 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "doc_arquitecture.tex" 1729185923 6102 76875ac4081a9a07dca5d3a6f94792b4 ""
+  "doc_arquitecture.toc" 1729185926 1108 63cee4ffffdb5751f9d207b381277042 "pdflatex"
+  "images/casos_uso.png" 1729182905 49745 8f6f85a5bbdec868edaa9d3117a8cafd ""
   (generated)
   "doc_arquitecture.aux"
   "doc_arquitecture.log"

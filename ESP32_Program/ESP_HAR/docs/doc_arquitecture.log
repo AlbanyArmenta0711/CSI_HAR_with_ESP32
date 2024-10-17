@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.6.4)  16 OCT 2024 17:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.6.4)  17 OCT 2024 10:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -433,7 +433,6 @@ Package tocbasic Info: Using my definition of `\numberline' on input line 11.
 Package tocbasic Info: Using my definition of `\numberline' on input line 12.
 Package tocbasic Info: Using my definition of `\numberline' on input line 13.
 Package tocbasic Info: Using my definition of `\numberline' on input line 14.
-Package tocbasic Info: Using my definition of `\numberline' on input line 15.
 )
 \tf@toc=\write4
 \openout4 = `doc_arquitecture.toc'.
@@ -456,12 +455,20 @@ chapter 2.
 
 ]
 chapter 3.
+<images/casos_uso.png, id=54, 549.05125pt x 434.62375pt>
+File: images/casos_uso.png Graphic file (type png)
+<use images/casos_uso.png>
+Package pdftex.def Info: images/casos_uso.png  used on input line 105.
+(pdftex.def)             Requested size: 312.96246pt x 247.7381pt.
 
 
 [5
 
-]
+ <./images/casos_uso.png>]
 chapter 4.
+
+LaTeX Warning: Reference `' on page 6 undefined on input line 111.
+
 
 
 [6
@@ -492,21 +499,25 @@ LaTeX Info: Redefining \% on input line 14.
 LaTeX2e <2024-06-01>
 L3 programming layer <2024-05-08>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `doc_arquitecture.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 14870 strings out of 473938
- 263812 string characters out of 5727864
+ 14881 strings out of 473938
+ 264074 string characters out of 5727864
  1934893 words of memory out of 5000000
- 37523 multiletter control sequences out of 15000+600000
+ 37534 multiletter control sequences out of 15000+600000
  563263 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 108i,11n,107p,11009b,536s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 108i,12n,107p,11009b,536s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/UABC/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/UABC/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/UABC/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/UABC/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/UABC/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on doc_arquitecture.pdf (9 pages, 106712 bytes).
+Output written on doc_arquitecture.pdf (9 pages, 128308 bytes).
 PDF statistics:
- 148 PDF objects out of 1000 (max. 8388607)
+ 149 PDF objects out of 1000 (max. 8388607)
  26 named destinations out of 1000 (max. 500000)
- 113 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 110 words of extra memory for PDF output out of 10000 (max. 10000000)
 
