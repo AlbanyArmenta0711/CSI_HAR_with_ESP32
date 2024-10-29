@@ -77,18 +77,25 @@ int enqueue(m_queue_t *q, void *value) {
 }
 
 
-void * queue_amp_to_ptr(m_queue_t *q) {
+void * queue_amp_to_ptr(m_queue_t *q, float max, float min) {
     int queue_size = get_count((*q));
     float * ptr_start = (float *) malloc(sizeof(float) * queue_size);
     int idx_aux = q->head; 
-    for(int i = 0; i < queue_size; i++ ) {
-        ptr_start[i] = q->data.csi_features[idx_aux].amp;
+    if (ptr_start != NULL) {
+        for(int i = 0; i < queue_size; i++ ) {
+            ptr_start[i] = q->data.csi_features[idx_aux].amp;
+            //rescale value
+            if (max != min)
+                ptr_start[i] = (ptr_start[i] - min)/(max - min);
 
-        if(idx_aux == q->max_numel - 1) {
-            idx_aux = 0; 
-        } else {
-            idx_aux++;
+            if(idx_aux == q->max_numel - 1) {
+                idx_aux = 0; 
+            } else {
+                idx_aux++;
+            }
         }
+    } else {
+        ESP_LOGW(TAG, "Out of memory for pointer!");
     }
 
     return ptr_start; 

@@ -40,9 +40,13 @@ typedef struct m_queue {
 void init_queue(m_queue_t *q, dtype_e dtype, int max_numel);
 
 /*
- * Function to get queue content as pointer to each element in queue 
+ * Function to get queue content as pointer to each element in queue (it also rescales data to [0,1])
+ * @param q: pointer to queue 
+ * @param max: max value in queue
+ * @param min: min value in queue
+ * @return csi amplitudes as pointer to flat array 
  */
-void * queue_amp_to_ptr(m_queue_t *q);
+void * queue_amp_to_ptr(m_queue_t *q, float max, float min);
 
 /*
  * Function to check if queue is empty.

@@ -1,7 +1,7 @@
 #ifndef FIR_FILTER_H
 #define FIR_FILTER_H
 
-#define HAMPEL_WIN_SIZE 20
+#define HAMPEL_WIN_SIZE 10
 #define HAMPEL_THRESHOLD 3 
 
 typedef struct fir_filter {

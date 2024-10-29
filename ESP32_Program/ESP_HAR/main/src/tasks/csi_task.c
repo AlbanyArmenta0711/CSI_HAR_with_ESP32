@@ -100,8 +100,12 @@ static void csi_task(void * config) {
                     ESP_LOGI(TAG, "initialized");
                     //Processor task will  be started
                     processor_task_start();
-                    processor_started = 1; 
                 break; 
+
+                case MSG_CSI_PROCESSOR_STARTED:
+                    ESP_LOGI(TAG, "MSG_CSI_PROCESSOR_STARTED");
+                    processor_started = 1; 
+                break;
             }
         }
     }

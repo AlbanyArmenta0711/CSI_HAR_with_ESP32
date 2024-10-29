@@ -30,7 +30,8 @@
         "regex": "c",
         "tuple": "c",
         "utility": "c",
-        "queue": "c"
+        "queue": "c",
+        "filters.h": "c"
     },
     "idf.adapterTargetName": "esp32"
 }

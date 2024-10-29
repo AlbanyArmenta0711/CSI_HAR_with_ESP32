@@ -9,11 +9,12 @@
 /*
  * Constants for processor_task
  */
-#define PROCESSOR_TASK_STACK_SIZE 4096
+#define PROCESSOR_TASK_STACK_SIZE 8192
 #define PROCESSOR_TASK_PRIORITY 3
 #define PROCESSOR_TASK_CORE_ID 1
+#define NUM_SC 51
 
-#define PROCESSOR_WINDOW_SIZE 400
+#define PROCESSOR_WINDOW_SIZE 850
 
 typedef struct hampel_filtered {
   float * data_filtered;

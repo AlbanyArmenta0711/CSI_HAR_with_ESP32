@@ -11,7 +11,7 @@
  */
 #define CSI_TASK_STACK_SIZE 2048
 #define CSI_TASK_PRIORITY 4 //Lower priority if compared to Wi-Fi task
-#define CSI_TASK_CORE_ID 1
+#define CSI_TASK_CORE_ID 0
 
 /*
  * Default configuration values for CSI 
@@ -26,7 +26,8 @@
 
 //Enum for CSI message IDs
 typedef enum csi_task_message_id {
-    MSG_CSI_START_CSI_COLLECTION = 0
+    MSG_CSI_START_CSI_COLLECTION = 0,
+    MSG_CSI_PROCESSOR_STARTED
 } csi_task_message_id_enum;
 
 typedef struct csi_task_message {

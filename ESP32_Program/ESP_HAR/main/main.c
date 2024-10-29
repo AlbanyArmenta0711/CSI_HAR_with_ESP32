@@ -3,7 +3,7 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "./include/tasks/wifi_task.h"
-#include "./include/tasks/HAR_task.h"
+#include "./include/tasks/predictor.h"
 
 void app_main(void)
 {
@@ -18,6 +18,5 @@ void app_main(void)
     //Start Wi-Fi task
     wifi_task_start();
 
-    start_har_task();
-
+    init_model();
 }

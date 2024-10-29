@@ -8,7 +8,7 @@
 #include <esp_attr.h>
 #include "esp_log.h"
 
-#include "../../include/tasks/predictor_task.h"
+#include "../../include/tasks/predictor.h"
 #include "../../include/model/model.h"
 
 
@@ -18,15 +18,15 @@ namespace {
   tflite::MicroInterpreter* interpreter = nullptr;
   TfLiteTensor* input = nullptr;
   TfLiteTensor* output = nullptr;
-  constexpr int kTensorArenaSize = 210950;
+  constexpr int kTensorArenaSize = 219200;
   EXT_RAM_BSS_ATTR uint8_t tensor_arena[kTensorArenaSize];
-  const int data_rows = 650;
-  const int data_cols = 64;
+  const int data_rows = 850;
+  const int data_cols = 51;
   const int input_size = data_rows * data_cols;  
 }
 
 int predict(float * input_data) {
-    memcpy(input->data.f, input_data, sizeof(float) * 650 * 64);
+    memcpy(input->data.f, input_data, sizeof(float) * data_rows * data_cols);
     //Run inference
     TfLiteStatus invoke_status = interpreter->Invoke(); 
     if (invoke_status != kTfLiteOk) {
@@ -57,16 +57,17 @@ static int setup_model() {
         return -1; 
     } 
     static tflite::MicroMutableOpResolver<10> op_resolver;
-    TF_LITE_ENSURE_STATUS(op_resolver.AddFullyConnected());
     TF_LITE_ENSURE_STATUS(op_resolver.AddQuantize());
-    TF_LITE_ENSURE_STATUS(op_resolver.AddSoftmax());
-    TF_LITE_ENSURE_STATUS(op_resolver.AddRelu());
-    TF_LITE_ENSURE_STATUS(op_resolver.AddAdd()); 
     TF_LITE_ENSURE_STATUS(op_resolver.AddExpandDims()); 
-    TF_LITE_ENSURE_STATUS(op_resolver.AddDequantize());
-    TF_LITE_ENSURE_STATUS(op_resolver.AddReshape());
-    TF_LITE_ENSURE_STATUS(op_resolver.AddMaxPool2D());
     TF_LITE_ENSURE_STATUS(op_resolver.AddConv2D());
+    TF_LITE_ENSURE_STATUS(op_resolver.AddReshape());
+    TF_LITE_ENSURE_STATUS(op_resolver.AddAdd()); 
+    TF_LITE_ENSURE_STATUS(op_resolver.AddMaxPool2D());
+    TF_LITE_ENSURE_STATUS(op_resolver.AddRelu());
+    TF_LITE_ENSURE_STATUS(op_resolver.AddFullyConnected());
+    TF_LITE_ENSURE_STATUS(op_resolver.AddSoftmax());
+    TF_LITE_ENSURE_STATUS(op_resolver.AddDequantize());
+
     static tflite::MicroInterpreter static_interpreter(model, op_resolver, tensor_arena, kTensorArenaSize);
     interpreter = &static_interpreter; 
 
@@ -87,6 +88,7 @@ static int setup_model() {
 
 int init_model() {
     int err; 
+    ESP_LOGI(TAG, "setting model...");
     err = setup_model(); 
     return err; 
 }
